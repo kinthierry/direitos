@@ -27,7 +27,7 @@
     <h1>                                                       
         C.T.CUMBANE
     </h1>
-    <h5>APOIANDO OS MOÇAMBICANOS</h5>
+    <h5>APOIO AOS MOÇAMBICANOS</h5>
 </div>
 
     <div data-aos="fade-up"
@@ -217,12 +217,19 @@ O artigo 204.º estabelece uma exceção importante:
 “O marido não pode requerer o divórcio litigioso durante a gravidez da mulher, mantendo-se a proibição até um ano depois do parto, salvo se atribuir a gravidez ao adultério.”
 </p>
 </div>
-
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
 
+  <script>
+  async function updateCounter() {
+    const response = await fetch("https://api.countapi.xyz/hit/ctcumbane.com/visits");
+    const data = await response.json();
+    document.getElementById("visits").textContent = data.value;
+  }
+  updateCounter();
+</script>
 </body>
 <footer>
     <p>Contacte-nos Via:</p>
@@ -244,5 +251,8 @@ O artigo 204.º estabelece uma exceção importante:
         MADE BY THIERRY THEONEST
         </b>
     </p>
+<h1>+<span id="visits"></span> VISITS</h1>
+
+
 </footer>
 </html>
