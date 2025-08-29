@@ -6,6 +6,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SWX6PF6JTD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SWX6PF6JTD');
+</script>
+
 </head>
 <body>
      <div 
@@ -234,36 +244,5 @@ O artigo 204.º estabelece uma exceção importante:
         MADE BY THIERRY THEONEST
         </b>
     </p>
-    <!-- Persistent Global Visitor Counter (no keys needed) -->
-<div id="visitor-counter" style="
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  background: #1e293b;
-  color: #fff;
-  border-radius: 12px;
-  font-family: 'Segoe UI', sans-serif;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-">
-  <img src="https://img.icons8.com/ios-glyphs/30/ffffff/user.png" alt="visitantes" style="height:24px;">
-  Visits: <span id="count">0</span>
-</div>
-
-<script>
-// Auto-created persistent CountAPI counter
-const endpoint = "https://api.countapi.xyz/hit/my_unique_site_auto/visits";
-
-fetch(endpoint)
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById("count").textContent = data.value;
-  })
-  .catch(err => {
-    console.log("Erro ao buscar contador:", err);
-    document.getElementById("count").textContent = "erro";
-  });
-</script>
 </footer>
 </html>
