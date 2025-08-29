@@ -234,5 +234,38 @@ O artigo 204.º estabelece uma exceção importante:
         MADE BY THIERRY THEONEST
         </b>
     </p>
+
+
+<!-- Stylish Visitor Counter -->
+<div id="visitor-counter" style="
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: #1e293b; 
+  color: #fff; 
+  border-radius: 12px; 
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+">
+  <img src="https://img.icons8.com/ios-glyphs/30/ffffff/user.png" alt="visitors" style="height:24px;">
+  Visits: <span id="count">0</span>
+</div>
+
+<script>
+// CountAPI endpoint
+const endpoint = "https://api.countapi.xyz/hit/c-t-c-direito-ao-alcance-de-todos/visits";
+
+fetch(endpoint)
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("count").textContent = data.value;
+  })
+  .catch(err => console.log("Error fetching visitor count:", err));
+</script>
+
+
+
 </footer>
 </html>
