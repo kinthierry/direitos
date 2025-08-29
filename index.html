@@ -234,16 +234,15 @@ O artigo 204.º estabelece uma exceção importante:
         MADE BY THIERRY THEONEST
         </b>
     </p>
-
-<!-- Persistent Visitor Counter without manual key -->
+    <!-- Persistent Global Visitor Counter (no keys needed) -->
 <div id="visitor-counter" style="
   display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 12px 20px;
-  background: #1e293b; 
-  color: #fff; 
-  border-radius: 12px; 
+  background: #1e293b;
+  color: #fff;
+  border-radius: 12px;
   font-family: 'Segoe UI', sans-serif;
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -253,15 +252,18 @@ O artigo 204.º estabelece uma exceção importante:
 </div>
 
 <script>
-// CountAPI auto-creates the counter if it doesn't exist
-const endpoint = "https://api.countapi.xyz/hit/c_t_c_direito_ao_alcance_de_todos/visits";
+// Auto-created persistent CountAPI counter
+const endpoint = "https://api.countapi.xyz/hit/my_unique_site_auto/visits";
 
 fetch(endpoint)
   .then(res => res.json())
   .then(data => {
     document.getElementById("count").textContent = data.value;
   })
-  .catch(err => console.log("Error fetching visitor count:", err));
+  .catch(err => {
+    console.log("Erro ao buscar contador:", err);
+    document.getElementById("count").textContent = "erro";
+  });
 </script>
 </footer>
 </html>
