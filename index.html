@@ -235,8 +235,7 @@ O artigo 204.º estabelece uma exceção importante:
         </b>
     </p>
 
-
-<!-- Stylish Visitor Counter -->
+<!-- Persistent Visitor Counter without manual key -->
 <div id="visitor-counter" style="
   display: inline-flex;
   align-items: center;
@@ -249,24 +248,20 @@ O artigo 204.º estabelece uma exceção importante:
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 ">
-  <img src="https://img.icons8.com/ios-glyphs/30/ffffff/user.png" alt="visitors" style="height:24px;">
+  <img src="https://img.icons8.com/ios-glyphs/30/ffffff/user.png" alt="visitantes" style="height:24px;">
   Visits: <span id="count">0</span>
 </div>
 
 <script>
-// CountAPI endpoint
+// CountAPI auto-creates the counter if it doesn't exist
 const endpoint = "https://api.countapi.xyz/hit/c_t_c_direito_ao_alcance_de_todos/visits";
-// Fetch and display the visitor count
 
 fetch(endpoint)
-  .then(response => response.json())
+  .then(res => res.json())
   .then(data => {
     document.getElementById("count").textContent = data.value;
   })
   .catch(err => console.log("Error fetching visitor count:", err));
 </script>
-
-
-
 </footer>
 </html>
