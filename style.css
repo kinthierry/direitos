@@ -39,46 +39,59 @@
         transition: transform all 2s ease;
         transform: translateY(10px);
         line-height: 1.6em;
+        text-align: justify;
+        font-size: 1.3em;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        letter-spacing: 1px;
+        font-family: 'Segoe UI', Tahoma,Verdana, Arial, Helvetica, sans-serif;
+        border: 2px solid rgb(53, 51, 168);
+        
+
       
 }
     .divv:hover{
         transform: translateY(-10px);
         box-shadow: 0 12px 20px rgb(255, 145, 0);
     }
-    nav{
-        padding: 3px;
-        width: 95%;
-        border-radius: 100px;
+    .navv{
+        padding: 2px;
+        width: 60%;
+        border-radius: 50px;
         box-shadow: 0 4px 8px rgb(255, 4, 4);
         transition: box-shadow 1.0s ease, transform 1.0s ease;
     }
-    nav:hover{
+    .navv:hover{
         box-shadow: 0 8px 16px rgb(0, 225, 255);    
         transform: scale(1.05);
         transition: 1.3s;
 
     }      
-    nav ul{
+    .navv ul{
         list-style-type: none;
-        margin: 1;
-        padding: 5;
+        margin: 1px;
+        padding: 1px;
         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
         justify-content: space-around;
         
 
     }
 
-    nav ul li a{
+    .navv ul li a{
         background-color: red;
         color:white;
         border: none;
-        padding: 5px 10px;
+        margin: 2px;
+        display: inline-block;
+        padding: 10px;
         cursor: pointer;
-        border-radius:10px ;
-        font-size: 1.1em;
+        border-radius:30px ;
+        font-size: 1.0em;
         text-decoration: none;
     }
-    nav ul li a:hover{
+    .navv ul li a:hover{
         background-color: orangered;
         color: black;
         transform: scale(1.1);
@@ -120,4 +133,125 @@
         font-weight: bold;
         letter-spacing: 3px;
         transition: transform 1.0s ease;
+    }
+
+
+.menu-icon {
+  display:none;
+  cursor: pointer;
+  height: 35px;
+  width: 40px;
+  display: flex;
+  background-color: rgb(18, 216, 223);
+  flex-direction: column;
+  justify-content: space-around;
+  transition: all 0.9s ease;
+}
+
+.menu-icon span {
+  display: block;
+  height: 5px;
+  width: 100%;
+  background-color: #f10707;
+  border-radius: 5px;
+  transition: all 0.7s ease;
+}
+
+.menu-icon.open .line-1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-icon.open .line-2 {
+  opacity: 0;
+}
+
+.menu-icon.open .line-3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#main-menu {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  #main-menu {
+    display: none; 
+    flex-direction: column;
+    width: 95%;
+    position: absolute;
+    top: 600px;
+    left: 10px;
+    z-index: 10;
+    border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.801);
+  box-shadow: 0 3px 1px rgb(238, 20, 20);
+  }
+  .menu-icon {
+    display: flex;
+  }
+  #main-menu.open {
+    display: flex;
+  }
+  #main-menu li {
+    width: 50px;
+    text-align: center;
+    padding-left: 50px;
+    padding-bottom: 3px;
+    font-size: 20px;
+    margin: 5px;
+  }
+}
+#main-menu ul ol{
+  padding: 0;
+  margin: 0;
+}
+
+
+#main-menu a{
+  text-decoration: none;
+  background-color: rgb(0, 255, 85);
+  color: #f50000;
+  width: 100px;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 10px;
+  display: block;
+  padding-left: 1px;
+    text-align: center;
+  font-size: 1.0em;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgb(255, 4,4);
+  transition: all 0.5s ease;
+  font-family: 'Segoe UI', Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+
+}
+#main-menu a:hover{
+  background-color: red;
+  color: #000000;
+  transform: scale(1.1);
+}
+.dropdown-menu{
+  display: none;
+  position: absolute;
+  background-color: rgba(201, 10, 10, 0.801);
+  min-width: 200px;
+  z-index: 1; 
+  overflow: hidden; 
+  margin-top: -40px; 
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgb(255, 255, 255);
+}
+.dropdown:hover .dropdown-menu {
+  display: block; 
+  transition: all 0.5s ease;
+}
+
+    html {
+        scroll-behavior: smooth;
     }

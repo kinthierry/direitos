@@ -34,7 +34,8 @@
     data-aos-easing="linear"
      data-aos-duration="1600">
 <br>
-    <nav>
+<div style="display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: space-between;align-items: center;">
+    <nav class="navv">
         <ul>
             <li>
                     <a href="index.html" >
@@ -47,9 +48,45 @@
                         <i class="fa fa-phone"></i>
                     CONTACTOS
                     </a>
-            </li>
+                </li>
         </ul>
+    </nav>
+    <nav class="menu" style="margin-left: 10px;">
+    <div style="display:flex;flex-direction: row;padding-top:40px;">
+    <div class="menu-icon" onclick="toggleMenu()">
+  <span class="line-1"></span>
+  <span class="line-2"></span>
+  <span class="line-3"></span>
+</div>
+<h3 style="padding-left: 3px;padding-top: 1px;">MENU</1>
+</div>
+<ul id="main-menu">
+  <li>
+    <a href="contacts.html" style="width: 200px;">CONTACTOS</a>
+ </li>
+   <li class="dropdown">
+       <h5  style="font-size: 1.3em;color: red ;text-shadow: 2px 2px 4px rgba(207, 196, 196, 0.5);cursor:pointer;">PARA MAIS TOPICOS ▼ </h5> 
+            <ul class="dropdown-menu">
+                <ol>
+                <li>
+                    <a href="uniao.html">Definição da Uniao</a>
+                </li>
+            </ol>
+            </ul> 
+    </li>
+</ul>
     </nav> 
+</div>
+<script>
+function toggleMenu() {
+  const menuIcon = document.querySelector(".menu-icon");
+  const mainMenu = document.getElementById("main-menu");
+
+  menuIcon.classList.toggle("open");
+  mainMenu.classList.toggle("open");
+}
+</script>
+
     </div>
     <div data-aos="fade-right" class="divv">
         <h2>
@@ -59,7 +96,7 @@
             Tomar a decisão de se divorciar é um passo significativo e muitas vezes desafiador. Em Moçambique, onde as normas culturais e sociais podem tornar esse processo ainda mais complexo, é crucial estar bem informado e contar com o suporte adequado.
         </p>
     </div>
-    <div data-aos="fade-left" class="divv">
+    <div data-aos="fade-right" class="divv">
         <h2>
         Você não está sozinho(a)!
         </h2>
